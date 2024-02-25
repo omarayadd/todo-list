@@ -1,0 +1,18 @@
+
+body{
+  background-color: black;
+  color: white;
+  font-size: 25px;
+}
+
+.App{
+  margin: 70px 30%;
+  text-align: center;
+  border: 2px solid teal;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.App ul{
+  list-style: "🔥";
+}
