@@ -13,6 +13,18 @@ body{
   border-radius: 20px;
 }
 
+.App li{
+  cursor: pointer;
+  overflow-wrap: break-word;
+}
 .App ul{
   list-style: "🔥";
+}
+
+.App .done{
+  list-style: "✅";
+}
+
+.App span{
+  cursor: pointer;
 }
