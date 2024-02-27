@@ -9,19 +9,37 @@ function App() {
     const newData = {completed:false, newTask}
     setTasks([...tasks, newData])
     taskRef.current.value = ""
+    // sorttask()
+    // console.log(tasks)
   }
 
   function itemDone(index){
     const newTasks = [...tasks]
     newTasks[index].completed = !newTasks[index].completed 
     setTasks(newTasks)
-    console.log(newTasks)
+    // console.log(newTasks)
+    sorttask()
   }
   
   const deleteTask = (index) =>{
     const newTasks = [...tasks]
     newTasks.splice(index, 1)
     setTasks(newTasks)
+  }
+
+  const sorttask =()=>{
+    const unfinishedTasks = tasks.filter((item)=>{
+      return(item.completed===false)
+    })
+    console.log(unfinishedTasks)
+    const finishedTasks = tasks.filter((item)=>{
+      return(item.completed===true)
+    })
+    if(finishedTasks && unfinishedTasks){
+    
+    setTasks([...unfinishedTasks,...finishedTasks])
+    // console.log(finishedTasks,"      ", unfinishedTasks)
+    }
   }
 
   return (
@@ -31,9 +49,11 @@ function App() {
         {
           tasks.map(({newTask, completed}, index) =>{
           return (
-            <div>
+            <div className='task-section'>
               <li className={completed?"done":""} onClick={()=>itemDone(index)}>{newTask}</li>
+              <div className='delete-span'>
               <span onClick={()=>deleteTask(index)}>X</span>
+              </div>
             </div>
           )
           })

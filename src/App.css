@@ -6,7 +6,7 @@ body{
 }
 
 .App{
-  margin: 70px 30%;
+  margin: 110px 30%;
   text-align: center;
   border: 2px solid teal;
   padding: 30px;
@@ -18,13 +18,61 @@ body{
   overflow-wrap: break-word;
 }
 .App ul{
-  list-style: "🔥";
+  list-style: "⚪";
 }
 
 .App .done{
+  text-decoration: line-through;
   list-style: "✅";
 }
 
 .App span{
   cursor: pointer;
+}
+
+.task-section{
+  display: flex;
+  justify-content: space-between;
+  overflow-wrap: break-word;
+}
+
+.task-section li {
+  width: 90%;
+  /* background-color: aqua; */
+  overflow-wrap: break-word;
+}
+
+input{
+  width: 50%;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+input:focus{
+  background-color: teal;
+  color: white;
+}
+button{
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  padding: 5px;
+  width: 30%;
+  height: 30px;
+  border-radius: 10px;
+}
+button:hover{
+background-color: teal;
+color: white;
+}
+
+.delete-span{
+  width: 8%;
+  height: 30px;
+  padding: 5px;
+}
+
+.delete-span:hover{
+  background-color: red;
 }
